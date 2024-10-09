@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase demo</title>
+    <script defer src="bundle.js"></script> <!-- Defer précise que l'exécution doit se passer à la fin du chargement-->
+</head>
+<body>
+    <h1>Factures</h1>
+    <form id="addFacture"> <!-- Formulaire unifié ici -->
+        <div>
+            <label for="number">Numéro</label>
+            <input  type="text" 
+                    id="number"
+                    name="number" 
+                    placeholder="Entrez le numero de la facture">
+        </div> <br>
+        <div>
+            <label for="status">
+                <select name="status" 
+                        id="status">
+                    <option value="Choisissez un status">Choisissez un status</option>
+                    <option value="A payer">A payer</option>   
+                    <option value="Payé">Payé</option> 
+                </select>
+            </label>
+        </div> <br>
+        <div>
+            <button type="submit">Enregistrer</button>
+        </div>
+    </form>
+
+    <ul id="idFacture"></ul> <!-- Lieu où seront affichées les factures -->
+
+    <div id="editForm" style="display:none;">
+        <form id="editFactureForm">
+          <label for="editNumber">Numéro :</label>
+          <input type="text" id="editNumber" name="number" required>
+          <label for="editStatus">Status :</label>
+          <select id="editStatus" name="status" required>
+            <option value="Choisissez un status">Choisissez un status</option>
+            <option value="Payé">Payé</option>
+            <option value="En attente">En attente</option>
+            <option value="Annulé">Annulé</option>
+          </select>
+          <button type="submit">Mettre à jour la facture</button>
+        </form>
+      </div>
+      
+</body>
+</html>
